@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Task & Deadline Planner - Nomor Absen 01
 
 **Nama:** ____________________  |  **Kelas:** XI RPL  |  **Sekolah:** SMK Antartika 1 Sidoarjo
@@ -104,3 +105,6 @@ Pengujian logika (validasi, filter, sort, ringkasan, terlambat) juga sudah dijal
 Saya menggunakan bantuan AI (Claude) untuk membantu menyusun kerangka proyek dan kode awal. Kode sudah saya baca dan pelajari, dan saya siap menjelaskannya saat demo. Referensi: TypeScript Guidebook dan dokumentasi Vite.
 
 > Ubah/hapus bagian ini sesuai kondisi sebenarnya.
+=======
+# Project_Individu_01
+>>>>>>> 5d88f90097bd2b93f0ce8e14b6a17630593ec2a3
