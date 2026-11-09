@@ -1,7 +1,7 @@
 <<<<<<< HEAD
 # Task & Deadline Planner - Nomor Absen 01
 
-**Nama:** ____________________  |  **Kelas:** XI RPL  |  **Sekolah:** SMK Antartika 1 Sidoarjo
+**Nama:** Ahmad Fakhry Habibulloh  |  **Kelas:** XI RPL  |  **Sekolah:** SMK Antartika 1 Sidoarjo
 
 ## Masalah dan tujuan
 
