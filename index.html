@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task &amp; Deadline Planner</title>
+  </head>
+  <body>
+    <div id="app">
+      <header class="topbar">
+        <div>
+          <h1>Task &amp; Deadline Planner</h1>
+          <p class="subtitle">Absen 01 &middot; Kelas XI RPL &middot; SMK Antartika 1 Sidoarjo</p>
+        </div>
+        <div class="topbar-actions">
+          <button type="button" id="btn-reload" class="btn btn-ghost">Muat ulang</button>
+          <button type="button" id="btn-error" class="btn btn-ghost" title="Demo tampilan error">Simulasi error</button>
+          <button type="button" id="btn-reset" class="btn btn-ghost">Reset data contoh</button>
+        </div>
+      </header>
+
+      <main class="layout">
+        <section class="card" aria-labelledby="summary-title">
+          <h2 id="summary-title">Ringkasan</h2>
+          <div class="stats" id="summary"></div>
+          <div class="progress" role="progressbar" aria-label="Persentase tugas selesai" aria-valuemin="0" aria-valuemax="100" id="progress">
+            <div class="progress-bar" id="progress-bar"></div>
+          </div>
+          <p class="progress-label" id="progress-label"></p>
+        </section>
+
+        <section class="card" aria-labelledby="form-title">
+          <h2 id="form-title">Tambah tugas</h2>
+          <form id="task-form" novalidate>
+            <input type="hidden" id="task-id" />
+            <label for="title">Judul tugas</label>
+            <input id="title" type="text" maxlength="100" placeholder="Contoh: Kerjakan PR Matematika" />
+
+            <label for="description">Catatan (opsional)</label>
+            <textarea id="description" rows="2" placeholder="Detail singkat tugas"></textarea>
+
+            <div class="row">
+              <div>
+                <label for="deadline">Tenggat</label>
+                <input id="deadline" type="date" />
+              </div>
+              <div>
+                <label for="priority">Prioritas</label>
+                <select id="priority">
+                  <option value="rendah">Rendah</option>
+                  <option value="sedang" selected>Sedang</option>
+                  <option value="tinggi">Tinggi</option>
+                </select>
+              </div>
+            </div>
+
+            <ul class="form-errors" id="form-errors" role="alert" hidden></ul>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary" id="btn-submit">Tambah tugas</button>
+              <button type="button" class="btn btn-ghost" id="btn-cancel" hidden>Batal</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="card list-card" aria-labelledby="list-title">
+          <h2 id="list-title">Daftar tugas</h2>
+
+          <div class="toolbar">
+            <input id="search" type="search" placeholder="Cari judul atau catatan..." aria-label="Cari tugas" />
+            <select id="filter-status" aria-label="Filter status">
+              <option value="semua">Semua status</option>
+              <option value="todo">Belum dikerjakan</option>
+              <option value="proses">Sedang dikerjakan</option>
+              <option value="selesai">Selesai</option>
+              <option value="terlambat">Terlambat</option>
+            </select>
+            <select id="filter-priority" aria-label="Filter prioritas">
+              <option value="semua">Semua prioritas</option>
+              <option value="tinggi">Tinggi</option>
+              <option value="sedang">Sedang</option>
+              <option value="rendah">Rendah</option>
+            </select>
+            <select id="sort" aria-label="Urutkan">
+              <option value="deadline">Urut: Tenggat</option>
+              <option value="priority">Urut: Prioritas</option>
+              <option value="title">Urut: Judul</option>
+            </select>
+          </div>
+
+          <div id="state" class="state" aria-live="polite"></div>
+          <ul class="task-list" id="task-list"></ul>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
